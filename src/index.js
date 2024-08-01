@@ -5,8 +5,8 @@ import { Provider } from 'react-redux'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import './index.css'
-import App from './App'
-import {store} from './redux/store'
+import App from './app/App'
+import { store } from './redux/store'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
