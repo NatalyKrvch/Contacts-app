@@ -3,23 +3,29 @@ import { useGetContactsQuery } from 'services/api/contactsApi'
 
 const useContactList = () => {
   const { data, error, isLoading } = useGetContactsQuery()
-  const [toast, setToast] = useState({ show: false, message: '' })
+  const [toast, setToast] = useState({
+    show: false,
+    message: '',
+    bg: '',
+    label: '',
+  })
+
+  const toastSettings = {
+    show: true,
+    label: 'Something went wrong',
+    bg: 'danger',
+    message: 'Failed to load contacts. Please try again.',
+  }
 
   useEffect(() => {
     if (data && !Array.isArray(data.resources)) {
-      setToast({
-        show: true,
-        message: 'Failed to load contacts. Please try again.',
-      })
+      setToast(toastSettings)
     }
   }, [data])
 
   useEffect(() => {
     if (error) {
-      setToast({
-        show: true,
-        message: 'An error occurred while fetching contacts.',
-      })
+      setToast(toastSettings)
     }
   }, [error])
 
