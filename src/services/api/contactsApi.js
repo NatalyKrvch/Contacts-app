@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { API_URL, AUTH_TOKEN, CORS_PROXY_URL } from '../../constants/globalConstants'
+import { API_URL, AUTH_TOKEN, CORS_PROXY_URL } from 'constants'
 
 export const contactsApi = createApi({
   reducerPath: 'contactsApi',
