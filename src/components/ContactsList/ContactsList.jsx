@@ -8,7 +8,7 @@ const ContactList = () => {
   const { contacts, toast, isLoading, setToast } = useContactList()
 
   if (isLoading)
-    return <Spinner style={{ margin: '50px auto', }} animation="border" />
+    return <Spinner style={{ margin: '50px auto' }} animation="border" />
 
   if (!Array.isArray(contacts)) {
     return (
@@ -18,7 +18,9 @@ const ContactList = () => {
           label="Oooops"
           bg=""
           message="No contacts available. Please add some"
-          onClose={() => setToast({ show: false, message: '' })}
+          onClose={() =>
+            setToast({ show: false, message: '', bg: '', label: '' })
+          }
         />
       </>
     )
@@ -36,7 +38,9 @@ const ContactList = () => {
         show={toast.show}
         label="Error happened"
         message={toast.message}
-        onClose={() => setToast({ show: false, message: '' })}
+        onClose={() =>
+          setToast({ show: false, message: '', bg: '', label: '' })
+        }
       />
     </Container>
   )
