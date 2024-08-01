@@ -8,7 +8,12 @@ const useContactForm = () => {
   const [email, setEmail] = useState('')
   const [validated, setValidated] = useState(false)
   const [errors, setErrors] = useState({})
-  const [toast, setToast] = useState({ show: false, message: '' })
+  const [toast, setToast] = useState({
+    show: false,
+    message: '',
+    bg: '',
+    label: '',
+  })
   const [addContact, { isLoading }] = useAddContactMutation()
 
   const contactData = getContactData(firstName, lastName, email)
@@ -40,7 +45,12 @@ const useContactForm = () => {
       resetForm()
     } catch (error) {
       console.error('Failed to add contact:', error)
-      setToast({ show: true, message: 'Failed to add contact. Please try again.' })
+      setToast({
+        show: true,
+        message: 'Failed to add contact. Please try again.',
+        bg: 'danger',
+        label: 'Oooops',
+      })
     }
   }
 
