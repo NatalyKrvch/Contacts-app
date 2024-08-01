@@ -43,6 +43,5 @@
     "@testing-library/react": "^16.0.0",
     "http-proxy-middleware": "^3.0.0",
     "jest": "^27.5.1"
-  },
-  "proxy": "https://live.devnimble.com"
+  }
 }

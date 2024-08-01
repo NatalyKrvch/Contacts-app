@@ -1,12 +1,13 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { API_URL, AUTH_TOKEN, CORS_PROXY_URL } from '../../constants/globalConstants'
 
 export const contactsApi = createApi({
   reducerPath: 'contactsApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: '/api/v1',
+    baseUrl: `${CORS_PROXY_URL}${API_URL}`,
     prepareHeaders: (headers) => {
-      headers.set('Authorization', 'Bearer VlP9cwH6cc7Kg2LsNPXpAvF6QNmgZn');
-      return headers;
+      headers.set('Authorization', `Bearer ${AUTH_TOKEN}`)
+      return headers
     },
   }),
   endpoints: (builder) => ({
@@ -42,7 +43,7 @@ export const contactsApi = createApi({
       }),
     }),
   }),
-});
+})
 
 export const {
   useGetContactsQuery,
@@ -50,4 +51,4 @@ export const {
   useAddContactMutation,
   useDeleteContactMutation,
   useAddContactTagsMutation,
-} = contactsApi;
+} = contactsApi
