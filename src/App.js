@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom'
 import { Container } from 'react-bootstrap'
 import HomePage from './pages/HomePage'
 import ContactPage from './pages/ContactPage'
-import './App.css'
+import './styles/App.css'
 
 function App() {
   return (
