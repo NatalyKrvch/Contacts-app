@@ -1,0 +1,19 @@
+.contact-card {
+  max-width: 558px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  cursor: pointer;
+}
+
+.contact-card-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+@media screen and (max-width: 768px) {
+  .contact-card-body {
+    min-width: 328px;
+  }
+}
