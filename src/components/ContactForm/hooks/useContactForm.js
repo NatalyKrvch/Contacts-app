@@ -2,28 +2,33 @@ import { useState } from 'react'
 import { useAddContactMutation, contactsApi } from 'services/api/contactsApi'
 import { getContactData, validateForm } from '../helpers'
 import { useDispatch } from 'react-redux'
+import { EMPTY_LENGTH } from 'constants'
 
 const useContactForm = () => {
-  const [firstName, setFirstName] = useState('')
-  const [lastName, setLastName] = useState('')
-  const [email, setEmail] = useState('')
-  const [validated, setValidated] = useState(false)
-  const [errors, setErrors] = useState({})
+  const [userInfo, setUserInfo] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+  })
   const [toast, setToast] = useState({
     show: false,
     message: '',
     bg: '',
     label: '',
   })
+  const [validated, setValidated] = useState(false)
+  const [errors, setErrors] = useState({})
   const [addContact, { isLoading }] = useAddContactMutation()
   const dispatch = useDispatch()
 
-  const contactData = getContactData(firstName, lastName, email)
+  const contactData = getContactData(
+    userInfo.firstName,
+    userInfo.lastName,
+    userInfo.email
+  )
 
   const resetForm = () => {
-    setFirstName('')
-    setLastName('')
-    setEmail('')
+    setUserInfo({ firstName: '', lastName: '', email: '' })
     setErrors({})
     setValidated(false)
   }
@@ -31,9 +36,13 @@ const useContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    const newErrors = validateForm(firstName, lastName, email)
+    const newErrors = validateForm(
+      userInfo.firstName,
+      userInfo.lastName,
+      userInfo.email
+    )
 
-    if (Object.keys(newErrors).length > 0) {
+    if (Object.keys(newErrors).length > EMPTY_LENGTH) {
       setErrors(newErrors)
       setValidated(false)
       return
@@ -64,13 +73,9 @@ const useContactForm = () => {
   const closeToast = () => setToast({ ...toast, show: false })
 
   return {
-    firstName,
-    lastName,
-    email,
+    userInfo,
     isLoading,
-    setFirstName,
-    setLastName,
-    setEmail,
+    setUserInfo,
     handleSubmit,
     validated,
     errors,
