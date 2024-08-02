@@ -12,8 +12,19 @@
   align-items: start;
 }
 
+.contact-card-tags {
+  margin-top: 20px;
+  position: relative;
+  left: 76px;
+  max-width: 400px;
+}
+
 @media screen and (max-width: 768px) {
   .contact-card-body {
     min-width: 328px;
+  }
+
+  .contact-card-tags {
+    max-width: 300px;
   }
 }
