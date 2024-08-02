@@ -1,13 +1,15 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useDeleteContactMutation } from 'services/api/contactsApi'
+import { useDeleteContactMutation, contactsApi } from 'services/api/contactsApi'
 import { getFieldValue } from '../helpers/getFieldValue'
+import { useDispatch } from 'react-redux'
 
 const useContactCard = (contact) => {
   const { id, fields, avatar_url, tags } = contact
   const [toast, setToast] = useState({ show: false, message: '', bg: '' })
   const [deleteContact, { isLoading: isDeleting }] = useDeleteContactMutation()
   const navigate = useNavigate()
+  const dispatch = useDispatch()
 
   const handleDelete = async () => {
     try {
@@ -18,6 +20,14 @@ const useContactCard = (contact) => {
         label: 'hurrray!',
         bg: 'success',
       })
+      dispatch(
+        contactsApi.util.updateQueryData('getContacts', undefined, (draft) => {
+          return {
+            ...draft,
+            resources: draft.resources.filter(contact => contact.id !== id),
+          }
+        })
+      )
     } catch (error) {
       setToast({
         show: true,

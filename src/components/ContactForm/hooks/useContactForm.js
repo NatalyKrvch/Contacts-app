@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import { useAddContactMutation } from 'services/api/contactsApi'
+import { useAddContactMutation, contactsApi } from 'services/api/contactsApi'
 import { getContactData, validateForm } from '../helpers'
+import { useDispatch } from 'react-redux'
 
 const useContactForm = () => {
   const [firstName, setFirstName] = useState('')
@@ -15,6 +16,7 @@ const useContactForm = () => {
     label: '',
   })
   const [addContact, { isLoading }] = useAddContactMutation()
+  const dispatch = useDispatch()
 
   const contactData = getContactData(firstName, lastName, email)
 
@@ -41,7 +43,12 @@ const useContactForm = () => {
     setValidated(true)
 
     try {
-      await addContact(contactData).unwrap()
+      const addedContact = await addContact(contactData).unwrap()
+      dispatch(
+        contactsApi.util.updateQueryData('getContacts', undefined, (draft) => {
+          draft.resources.unshift(addedContact)
+        })
+      )
       resetForm()
     } catch (error) {
       console.error('Failed to add contact:', error)
