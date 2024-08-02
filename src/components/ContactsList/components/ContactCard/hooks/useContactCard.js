@@ -48,17 +48,21 @@ const useContactCard = (contact) => {
   const lastName = getFieldValue(fields, 'last name')
   const email = getFieldValue(fields, 'email')
 
+  const userInfo = {
+    firstName,
+    lastName,
+    email,
+    avatarUrl: avatar_url,
+    tags,
+  }
+
   return {
     handleDelete,
     isDeleting,
     toast,
     onToastClose,
-    firstName,
-    lastName,
-    email,
-    avatar_url,
-    tags,
-    navigateToContact
+    userInfo,
+    navigateToContact,
   }
 }
 
