@@ -1,8 +1,8 @@
 import { Route, Routes } from 'react-router-dom'
 import { Container } from 'react-bootstrap'
-import HomePage from './pages/HomePage'
-import ContactPage from './pages/ContactPage'
-import './styles/App.css'
+import HomePage from '../pages/HomePage/HomePage'
+import ContactPage from '../pages/ContactPage'
+import './App.css'
 
 function App() {
   return (
