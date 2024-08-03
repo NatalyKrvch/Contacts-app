@@ -1,6 +1,6 @@
 import { Badge } from 'react-bootstrap'
 
-const TagsList = ({ tags }) => {
+const TagsList = ({ tags = [] }) => {
   return (
     <div>
       {tags.map((tag) => (
