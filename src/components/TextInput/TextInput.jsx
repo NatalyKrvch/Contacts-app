@@ -8,17 +8,19 @@ const TextInput = ({
   className,
   id,
   type = 'text',
+  placeholder = '',
   required = false,
 }) => {
   return (
     <Form.Group controlId={id}>
-      <Form.Label className={className}>{label}</Form.Label>
+      {label && <Form.Label className={className}>{label}</Form.Label>}
       <Form.Control
         type={type}
         value={value}
         onChange={(e) => onChange(e.target.value)}
         isInvalid={!!errorMessage}
         required={required}
+        placeholder={placeholder}
       />
       <Form.Control.Feedback type="invalid">
         {errorMessage}
