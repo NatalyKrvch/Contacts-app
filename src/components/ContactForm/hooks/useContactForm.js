@@ -22,9 +22,9 @@ const useContactForm = () => {
   const dispatch = useDispatch()
 
   const contactData = getContactData(
-    userInfo.firstName,
-    userInfo.lastName,
-    userInfo.email
+    userInfo.firstName.trim(),
+    userInfo.lastName.trim(),
+    userInfo.email.trim(),
   )
 
   const resetForm = () => {
