@@ -9,8 +9,8 @@ const UserInfo = ({ firstName, lastName, email, avatarUrl, avatarSize }) => {
         <Card.Title className="contact-title">
           {firstName} {lastName}
         </Card.Title>
-        <Card.Text className="contact-tags">
-          Email: {email}
+        <Card.Text className="contact-email">
+          {email}
         </Card.Text>
       </div>
     </div>
