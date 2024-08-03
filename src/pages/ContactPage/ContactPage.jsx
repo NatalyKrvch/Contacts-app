@@ -1,23 +1,22 @@
-import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
 import { Spinner } from 'react-bootstrap'
-import { useGetContactQuery } from 'services/api/contactsApi'
 import CustomToast from 'components/CustomToast/CustomToast'
 import UserInfo from 'components/UserInfo/UserInfo'
+import TagForm from 'components/TagForm/TagForm'
+import useContactPage from './hooks/useContactPage'
 import TagsList from 'components/TagsList/TagList'
-import { extractContactFields } from './helpers/extractContactFields'
 import './ContactPage.css'
 
 const ContactPage = () => {
-  const { id } = useParams()
-  const { data: contact, error, isLoading } = useGetContactQuery(id)
-  const [showToast, setShowToast] = useState(false)
-
-  useEffect(() => {
-    if (error) {
-      setShowToast(true)
-    }
-  }, [error])
+  const {
+    contact,
+    error,
+    isLoading,
+    showToast,
+    setShowToast,
+    tags,
+    handleAddTags,
+    contactFields,
+  } = useContactPage()
 
   if (isLoading) {
     return (
@@ -39,10 +38,7 @@ const ContactPage = () => {
     )
   }
 
-  const contactFields = extractContactFields(contact)
   const { firstName, lastName, email, avatarUrl } = contactFields
-
-  const tags = ['tag1', 'tag2', 'tag3', 'tag4', 'tag5']
 
   return (
     <div className="contact-page-container">
@@ -57,6 +53,7 @@ const ContactPage = () => {
           />
           <p className="fw-bold mt-5">Tags</p>
           <TagsList tags={tags} />
+          <TagForm onAddTags={handleAddTags} />
         </>
       ) : (
         <CustomToast
