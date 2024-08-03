@@ -20,6 +20,10 @@
   max-width: 400px;
 }
 
+svg:hover {
+  transform: scale(1.08);
+}
+
 @media screen and (max-width: 768px) {
   .contact-card-body {
     min-width: 328px;

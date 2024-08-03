@@ -12,10 +12,11 @@ code {
     monospace;
 }
 
-.form-control {
+.form-control:focus {
+  border-color: #dee2e6;
+  box-shadow: none;
+}
 
-  &:focus {
-    border-color: #dee2e6;
-    box-shadow: none;
-  }
+.form-control::placeholder {
+  color: #ced4da;
 }
