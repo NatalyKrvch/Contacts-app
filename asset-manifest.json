@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Contacts-app/static/css/main.f7227c94.css",
-    "main.js": "/Contacts-app/static/js/main.932d7a5e.js",
+    "main.css": "/Contacts-app/static/css/main.8c5ad2b4.css",
+    "main.js": "/Contacts-app/static/js/main.f89cc7ae.js",
     "index.html": "/Contacts-app/index.html",
-    "main.f7227c94.css.map": "/Contacts-app/static/css/main.f7227c94.css.map",
-    "main.932d7a5e.js.map": "/Contacts-app/static/js/main.932d7a5e.js.map"
+    "main.8c5ad2b4.css.map": "/Contacts-app/static/css/main.8c5ad2b4.css.map",
+    "main.f89cc7ae.js.map": "/Contacts-app/static/js/main.f89cc7ae.js.map"
   },
   "entrypoints": [
-    "static/css/main.f7227c94.css",
-    "static/js/main.932d7a5e.js"
+    "static/css/main.8c5ad2b4.css",
+    "static/js/main.f89cc7ae.js"
   ]
 }
