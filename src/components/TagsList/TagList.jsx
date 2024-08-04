@@ -1,15 +1,16 @@
-import { Badge } from 'react-bootstrap'
+import React from 'react';
+import { Badge } from 'react-bootstrap';
 
 const TagsList = ({ tags = [] }) => {
   return (
-    <div>
+    <div data-testid="tags-list">
       {tags.map(({ id, tag }) => (
-        <Badge key={id} bg="secondary" className="me-2 fw-light">
+        <Badge key={id} bg="secondary" className="me-2 fw-light" data-testid={`tag-${id}`}>
           {tag}
         </Badge>
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default TagsList
+export default TagsList;
