@@ -2,9 +2,9 @@ import { Card, Button } from 'react-bootstrap'
 import { MdClose } from 'react-icons/md'
 import CustomToast from 'components/CustomToast/CustomToast'
 import useContactCard from './hooks/useContactCard'
-import './ContactCard.css'
 import UserInfo from 'components/UserInfo/UserInfo'
 import TagsList from 'components/TagsList/TagList'
+import './ContactCard.css'
 
 const ContactCard = ({ contact }) => {
   const {
@@ -16,8 +16,6 @@ const ContactCard = ({ contact }) => {
     navigateToContact,
   } = useContactCard(contact)
 
-  const tags = ['tag1', 'tag2', 'tag3', 'tag4', 'tag5', 'tag6', 'tag7', 'tag8', 'tag9', 'tag10']
-
   return (
     <>
       <Card className="contact-card" onClick={navigateToContact}>
@@ -25,7 +23,7 @@ const ContactCard = ({ contact }) => {
           <div className="d-flex flex-column">
             <UserInfo {...userInfo} avatarSize={59} />
             <span className='contact-card-tags'>
-              <TagsList tags={tags} />
+              <TagsList tags={userInfo.tags} />
             </span>
           </div>
           <Button
