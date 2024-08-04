@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.form-control:focus {
+  border-color: #dee2e6;
+  box-shadow: none;
+}
+
+.form-control::placeholder {
+  color: #ced4da;
+}

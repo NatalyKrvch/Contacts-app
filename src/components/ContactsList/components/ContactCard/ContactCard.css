@@ -4,6 +4,7 @@
   margin-right: auto;
   display: flex;
   cursor: pointer;
+  border: solid 1px #dee2e6;
 }
 
 .contact-card-body {
@@ -12,8 +13,23 @@
   align-items: start;
 }
 
+.contact-card-tags {
+  margin-top: 20px;
+  position: relative;
+  left: 76px;
+  max-width: 400px;
+}
+
+svg:hover {
+  transform: scale(1.08);
+}
+
 @media screen and (max-width: 768px) {
   .contact-card-body {
     min-width: 328px;
+  }
+
+  .contact-card-tags {
+    max-width: 300px;
   }
 }

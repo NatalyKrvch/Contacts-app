@@ -1,17 +1,17 @@
 import { Image } from 'react-bootstrap'
 import { MdAccountCircle } from 'react-icons/md'
 
-const renderAvatar = (avatar_url) => {
-  return avatar_url ? (
+const renderAvatar = (avatarUrl, size) => {
+  return avatarUrl ? (
     <Image
-      src={avatar_url}
+      src={avatarUrl}
       roundedCircle
-      width={48}
-      height={48}
+      width={size}
+      height={size}
       alt="avatar"
     />
   ) : (
-    <MdAccountCircle size={48} color="#e8eaed" />
+    <MdAccountCircle size={size} color="#e8eaed" />
   )
 }
 

@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
 import { Container } from 'react-bootstrap'
 import HomePage from '../pages/HomePage/HomePage'
-import ContactPage from '../pages/ContactPage'
+import ContactPage from '../pages/ContactPage/ContactPage'
 import './App.css'
 
 function App() {
