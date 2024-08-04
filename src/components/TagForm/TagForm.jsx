@@ -25,7 +25,7 @@ const TagForm = ({ onAddTags }) => {
         onChange={setTagInput}
         placeholder="Add new Tags separated by commas"
       />
-      <Button variant='success' onClick={handleAddTags} className="mt-3 w-100">
+      <Button variant="success" onClick={handleAddTags} className="mt-3 w-100">
         Add Tags
       </Button>
     </div>

@@ -24,7 +24,7 @@ const useContactCard = (contact) => {
         contactsApi.util.updateQueryData('getContacts', undefined, (draft) => {
           return {
             ...draft,
-            resources: draft.resources.filter(contact => contact.id !== id),
+            resources: draft.resources.filter((contact) => contact.id !== id),
           }
         })
       )

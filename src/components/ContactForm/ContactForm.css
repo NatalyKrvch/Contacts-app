@@ -2,8 +2,8 @@
   position: sticky;
   top: 0;
   height: 100vh;
-  width: 280px;
-  background-color: #fff;
+  width: var(--contact-form-width);
+  background-color: var(--main-white-color);
   padding: 10px;
   margin: 0;
 }
