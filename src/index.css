@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 
+:root {
+  --max-app-width: 1280px;
+  --min-app-width: 400px;
+  --tablet-width: 768px;
+  --conact-card-width: 558px;
+  --conact-card-width-tablet: 328px;
+  --tags-width: 400px;
+  --tags-width-tablet: 300px;
+  --contact-form-width: 280px;
+  --contact-page-width: 430px;
+
+  --border-color: #dee2e6;
+  --main-white-color: #fff;
+}
+
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;

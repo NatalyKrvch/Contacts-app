@@ -1,10 +1,10 @@
 .contact-card {
-  max-width: 558px;
+  max-width: var(--conact-card-width);
   margin-left: auto;
   margin-right: auto;
   display: flex;
   cursor: pointer;
-  border: solid 1px #dee2e6;
+  border: solid 1px var(--border-color);
 }
 
 .contact-card-body {
@@ -17,19 +17,19 @@
   margin-top: 20px;
   position: relative;
   left: 76px;
-  max-width: 400px;
+  max-width: var(--tags-width);
 }
 
 svg:hover {
   transform: scale(1.08);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: var(--tablet-width)) {
   .contact-card-body {
-    min-width: 328px;
+    min-width: var(--conact-card-width-tablet);
   }
 
   .contact-card-tags {
-    max-width: 300px;
+    max-width: var(--tags-width-tablet);
   }
 }
