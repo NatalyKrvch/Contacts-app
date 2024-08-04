@@ -1,5 +1,6 @@
 import { Card, Button } from 'react-bootstrap'
 import { MdClose } from 'react-icons/md'
+import { CLOSE_BUTTON_SIZE, LARGE_AVATAR_SIZE } from 'constants'
 import CustomToast from 'components/CustomToast/CustomToast'
 import useContactCard from './hooks/useContactCard'
 import UserInfo from 'components/UserInfo/UserInfo'
@@ -21,8 +22,8 @@ const ContactCard = ({ contact }) => {
       <Card className="contact-card" onClick={navigateToContact}>
         <Card.Body className="contact-card-body">
           <div className="d-flex flex-column">
-            <UserInfo {...userInfo} avatarSize={59} />
-            <span className='contact-card-tags'>
+            <UserInfo {...userInfo} avatarSize={LARGE_AVATAR_SIZE} />
+            <span className="contact-card-tags">
               <TagsList tags={userInfo.tags} />
             </span>
           </div>
@@ -35,7 +36,7 @@ const ContactCard = ({ contact }) => {
             }}
             disabled={isDeleting}
           >
-            <MdClose size={24} />
+            <MdClose size={CLOSE_BUTTON_SIZE} />
           </Button>
         </Card.Body>
       </Card>
