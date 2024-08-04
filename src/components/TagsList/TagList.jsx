@@ -3,8 +3,8 @@ import { Badge } from 'react-bootstrap'
 const TagsList = ({ tags = [] }) => {
   return (
     <div>
-      {tags.map((tag) => (
-        <Badge key={tag} bg="secondary" className="me-2 fw-light">
+      {tags.map(({ id, tag }) => (
+        <Badge key={id} bg="secondary" className="me-2 fw-light">
           {tag}
         </Badge>
       ))}
