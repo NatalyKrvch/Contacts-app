@@ -44,7 +44,10 @@ export const contactsApi = createApi({
         url: `contact/${id}`,
         method: 'DELETE',
       }),
-      invalidatesTags: (result, error, id) => [{ type: 'Contacts', id: 'LIST' }, { type: 'Contact', id }],
+      invalidatesTags: (result, error, id) => [
+        { type: 'Contacts', id: 'LIST' },
+        { type: 'Contact', id },
+      ],
     }),
     addContactTags: builder.mutation({
       query: ({ id, tags }) => ({

@@ -53,9 +53,11 @@ const ContactPage = () => {
           />
           <p className="fw-bold mt-5">Tags</p>
           <TagsList tags={tags} />
-          <TagForm onAddTags={(newTags) => {
-            handleAddTags(newTags)
-          }} />
+          <TagForm
+            onAddTags={(newTags) => {
+              handleAddTags(newTags)
+            }}
+          />
         </>
       ) : (
         <CustomToast
