@@ -3,13 +3,14 @@ import { useParams } from 'react-router-dom'
 import { useGetContactQuery, useAddContactTagsMutation } from 'services/api/contactsApi'
 import { extractContactFields } from '../helpers/extractContactFields'
 
-
 const useContactPage = () => {
   const { id } = useParams()
-  const { data: contact, error, isLoading } = useGetContactQuery(id)
+  const { data, error, isLoading, refetch } = useGetContactQuery(id)
   const [addContactTags] = useAddContactTagsMutation()
   const [showToast, setShowToast] = useState(false)
   const [tags, setTags] = useState([])
+
+  const contact = data?.resources?.[0]
 
   useEffect(() => {
     if (contact) {
@@ -25,14 +26,20 @@ const useContactPage = () => {
 
   const handleAddTags = async (newTags) => {
     try {
-      const updatedTags = await addContactTags({ id, tags: newTags }).unwrap()
-      setTags(updatedTags)
+      const existingTags = tags.length > 0 ? tags.map(tag => tag.tag) : []
+      const allTags = [...existingTags, ...newTags]
+      const updatedContact = await addContactTags({ id: contact.id, tags: allTags }).unwrap()
+      if (updatedContact.resources && updatedContact.resources[0]) {
+        setTags(updatedContact.resources[0].tags)
+      } else {
+        console.error('Unexpected response structure:', updatedContact)
+      }
     } catch (err) {
       console.error('Failed to add tags:', err)
     }
   }
 
-  const contactFields = contact ? extractContactFields(contact) : {}
+  const contactFields = contact ? extractContactFields({ resources: [contact] }) : {}
 
   return {
     contact,
