@@ -17,8 +17,10 @@ const useContactList = () => {
     message: 'Failed to load contacts. Please try again.',
   }
 
+  const isValidData = data && !Array.isArray(data.resources)
+
   useEffect(() => {
-    if (data && !Array.isArray(data.resources)) {
+    if (isValidData) {
       setToast(toastSettings)
     }
   }, [data])
