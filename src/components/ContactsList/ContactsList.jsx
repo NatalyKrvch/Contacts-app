@@ -1,8 +1,7 @@
-import React from 'react'
 import { Container, Spinner } from 'react-bootstrap'
-import ContactCard from './components/ContactCard/ContactCard'
 import CustomToast from 'components/CustomToast/CustomToast'
 import useContactList from './hooks/useContactList'
+import ContactCard from 'components/ContactCard/ContactCard'
 
 const ContactList = () => {
   const { contacts, toast, isLoading, setToast } = useContactList()
