@@ -14,12 +14,6 @@ const useContactCard = (contact) => {
   const handleDelete = async () => {
     try {
       await deleteContact(id).unwrap()
-      setToast({
-        show: true,
-        message: 'Contact deleted successfully',
-        label: 'hurrray!',
-        bg: 'success',
-      })
       dispatch(
         contactsApi.util.updateQueryData('getContacts', undefined, (draft) => {
           return {
