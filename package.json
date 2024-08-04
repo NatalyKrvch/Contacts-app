@@ -1,7 +1,8 @@
 {
-  "name": "nimble-test",
+  "name": "contacts-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://NatalyKrvch.github.io/Contacts-app",
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.7",
     "@testing-library/user-event": "^13.5.0",
