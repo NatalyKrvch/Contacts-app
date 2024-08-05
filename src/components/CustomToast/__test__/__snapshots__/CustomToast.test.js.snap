@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CustomToast renders CustomToast correctly when shown 1`] = `
+<div>
+  <div
+    class="toast-container top-0 end-0 p-3"
+  >
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      class="fade toast bg-danger show"
+      role="alert"
+    >
+      <div
+        class="toast-header"
+      >
+        <strong
+          class="me-auto"
+        >
+          Test Label
+        </strong>
+        <button
+          aria-label="Close"
+          class="btn-close"
+          data-dismiss="toast"
+          type="button"
+        />
+      </div>
+      <div
+        class="toast-body"
+      >
+        This is a test message
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`CustomToast renders with custom background color 1`] = `
+<div>
+  <div
+    class="toast-container top-0 end-0 p-3"
+  >
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      class="fade toast bg-success show"
+      role="alert"
+    >
+      <div
+        class="toast-header"
+      >
+        <strong
+          class="me-auto"
+        >
+          Test Label
+        </strong>
+        <button
+          aria-label="Close"
+          class="btn-close"
+          data-dismiss="toast"
+          type="button"
+        />
+      </div>
+      <div
+        class="toast-body"
+      >
+        This is a test message
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`CustomToast renders with default background color 1`] = `
+<div>
+  <div
+    class="toast-container top-0 end-0 p-3"
+  >
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      class="fade toast bg-danger show"
+      role="alert"
+    >
+      <div
+        class="toast-header"
+      >
+        <strong
+          class="me-auto"
+        >
+          Test Label
+        </strong>
+        <button
+          aria-label="Close"
+          class="btn-close"
+          data-dismiss="toast"
+          type="button"
+        />
+      </div>
+      <div
+        class="toast-body"
+      >
+        This is a test message
+      </div>
+    </div>
+  </div>
+</div>
+`;

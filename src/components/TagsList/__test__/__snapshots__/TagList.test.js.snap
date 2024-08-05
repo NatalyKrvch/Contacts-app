@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TagsList renders an empty div when no tags are provided 1`] = `
+<div>
+  <div
+    data-testid="tags-list"
+  />
+</div>
+`;
+
+exports[`TagsList renders tags correctly 1`] = `
+<div>
+  <div
+    data-testid="tags-list"
+  >
+    <span
+      class="me-2 fw-light badge bg-secondary"
+      data-testid="tag-1"
+    >
+      Tag1
+    </span>
+    <span
+      class="me-2 fw-light badge bg-secondary"
+      data-testid="tag-2"
+    >
+      Tag2
+    </span>
+    <span
+      class="me-2 fw-light badge bg-secondary"
+      data-testid="tag-3"
+    >
+      Tag3
+    </span>
+  </div>
+</div>
+`;
