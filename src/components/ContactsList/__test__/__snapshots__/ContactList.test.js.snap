@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactList renders contacts correctly 1`] = `
+<div>
+  <div
+    class="container"
+    style="max-width: 558px; margin: 0px auto;"
+  >
+    <p
+      class="fw-medium fs-5 mt-3"
+    >
+      Contacts
+    </p>
+    <div
+      class="mb-3"
+    >
+      <div
+        data-testid="contact-card"
+      >
+        John Doe
+      </div>
+    </div>
+    <div
+      class="mb-3"
+    >
+      <div
+        data-testid="contact-card"
+      >
+        Jane Smith
+      </div>
+    </div>
+    <div
+      data-testid="custom-toast"
+    >
+      <strong>
+        Error happened
+      </strong>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ContactList renders custom toast when no contacts available 1`] = `
+<div>
+  <div
+    data-testid="custom-toast"
+  >
+    <strong>
+      Oooops
+    </strong>
+    <div>
+      No contacts available. Please add some
+    </div>
+    <button>
+      Close
+    </button>
+  </div>
+</div>
+`;
+
+exports[`ContactList renders error toast when there is an error 1`] = `
+<div>
+  <div
+    class="container"
+    style="max-width: 558px; margin: 0px auto;"
+  >
+    <p
+      class="fw-medium fs-5 mt-3"
+    >
+      Contacts
+    </p>
+    <div
+      data-testid="custom-toast"
+    >
+      <strong>
+        Error happened
+      </strong>
+      <div>
+        An error occurred
+      </div>
+      <button>
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ContactList renders loading spinner when loading 1`] = `
+<div>
+  <div
+    class="spinner-border"
+    style="margin: 50px auto;"
+  />
+</div>
+`;
