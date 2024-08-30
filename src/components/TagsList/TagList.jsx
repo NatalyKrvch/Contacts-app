@@ -2,9 +2,9 @@ import { Badge } from 'react-bootstrap'
 
 const TagsList = ({ tags = [] }) => {
   return (
-    <div>
+    <div data-testid="tags-list">
       {tags.map(({ id, tag }) => (
-        <Badge key={id} bg="secondary" className="me-2 mb-3 fw-light">
+        <Badge key={id} bg="secondary" className="me-2 mb-3 fw-light" data-testid={`tag-${id}`}>
           {tag}
         </Badge>
       ))}

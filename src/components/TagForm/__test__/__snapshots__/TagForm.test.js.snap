@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TagForm does not call onAddTags if input is empty 1`] = `
+<input
+  class="form-control"
+  placeholder="Add new Tags separated by commas"
+  type="text"
+  value=""
+/>
+`;
+
+exports[`TagForm renders TagForm correctly 1`] = `
+<div>
+  <div>
+    <div>
+      <input
+        class="form-control"
+        placeholder="Add new Tags separated by commas"
+        type="text"
+        value=""
+      />
+      <div
+        class="invalid-feedback"
+      />
+    </div>
+    <button
+      class="mt-3 w-100 btn btn-success"
+      type="button"
+    >
+      Add Tags
+    </button>
+  </div>
+</div>
+`;
+
+exports[`TagForm updates input value when typing 1`] = `
+<input
+  class="form-control"
+  placeholder="Add new Tags separated by commas"
+  type="text"
+  value="tag1, tag2"
+/>
+`;
