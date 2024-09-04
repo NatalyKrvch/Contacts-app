@@ -18,7 +18,7 @@ The Contacts App is a web application designed for managing and organizing conta
 - **JavaScript (ES6+)**
 - **CSS/HTML**
 - **Bootstrap**
-- **Jest & React Testing Library**: For unit testing.
+- **Jest & React Testing Library**
 
 ## Getting Started
 
